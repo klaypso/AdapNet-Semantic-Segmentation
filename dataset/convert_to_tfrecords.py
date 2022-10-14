@@ -21,4 +21,8 @@ def _int64_feature(data):
     return tf.train.Feature(int64_list=tf.train.Int64List(value=[data]))
 
 def _bytes_feature(data):
-    return tf.train.Fe
+    return tf.train.Feature(bytes_list=tf.train.BytesList(value=[data]))
+
+PARSER = argparse.ArgumentParser()
+PARSER.add_argument('-f', '--file')
+P

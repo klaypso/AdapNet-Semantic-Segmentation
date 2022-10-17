@@ -25,4 +25,8 @@ def _bytes_feature(data):
 
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument('-f', '--file')
-P
+PARSER.add_argument('-r', '--record')
+PARSER.add_argument('-m', '--mean')
+
+def decode(txt):
+    with open(txt)

@@ -34,4 +34,9 @@ def decode(txt):
 
     file_list = []
     for line in all_list:
-       
+        temp = line.strip('\n').split(' ')
+        file_list.append(temp)
+
+    return file_list
+
+def convert(f, re

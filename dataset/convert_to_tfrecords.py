@@ -29,4 +29,9 @@ PARSER.add_argument('-r', '--record')
 PARSER.add_argument('-m', '--mean')
 
 def decode(txt):
-    with open(txt)
+    with open(txt) as file_handler:
+        all_list = file_handler.readlines()
+
+    file_list = []
+    for line in all_list:
+       

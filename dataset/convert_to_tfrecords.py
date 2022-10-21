@@ -39,4 +39,9 @@ def decode(txt):
 
     return file_list
 
-def convert(f, re
+def convert(f, record_name, mean_flag):
+    count = 0.0
+    writer = tf.python_io.TFRecordWriter(record_name)
+
+    if mean_flag:
+        

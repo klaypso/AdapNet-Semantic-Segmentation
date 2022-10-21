@@ -44,4 +44,8 @@ def convert(f, record_name, mean_flag):
     writer = tf.python_io.TFRecordWriter(record_name)
 
     if mean_flag:
-        
+        mean = np.zeros(cv2.imread(f[0][0]).shape, np.float32)
+
+    for name in f:
+        modality1 = cv2.imread(name[0])
+     

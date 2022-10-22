@@ -53,4 +53,6 @@ def convert(f, record_name, mean_flag):
         
         label = cv2.imread(name[1], cv2.IMREAD_ANYCOLOR)
         try:
-      
+            assert len(label.shape)==2
+        except AssertionError, e:
+            raise( AssertionError( "Label sh

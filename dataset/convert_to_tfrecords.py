@@ -48,4 +48,9 @@ def convert(f, record_name, mean_flag):
 
     for name in f:
         modality1 = cv2.imread(name[0])
-     
+        if mean_flag:
+            mean += modality1
+        
+        label = cv2.imread(name[1], cv2.IMREAD_ANYCOLOR)
+        try:
+      

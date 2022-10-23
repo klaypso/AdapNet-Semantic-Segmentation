@@ -55,4 +55,8 @@ def convert(f, record_name, mean_flag):
         try:
             assert len(label.shape)==2
         except AssertionError, e:
-            raise( AssertionError( "Label sh
+            raise( AssertionError( "Label should be one channel!" ) )
+            
+        height = modality1.shape[0]
+        width = modality1.shape[1]
+        modal

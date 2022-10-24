@@ -59,4 +59,6 @@ def convert(f, record_name, mean_flag):
             
         height = modality1.shape[0]
         width = modality1.shape[1]
-        modal
+        modality1 = modality1.tostring()
+        label = label.tostring()
+        features = {'height':_int64_feature(height

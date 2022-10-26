@@ -61,4 +61,7 @@ def convert(f, record_name, mean_flag):
         width = modality1.shape[1]
         modality1 = modality1.tostring()
         label = label.tostring()
-        features = {'height':_int64_feature(height
+        features = {'height':_int64_feature(height),
+                    'width':_int64_feature(width),
+                    'modality1':_bytes_feature(modality1),
+ 

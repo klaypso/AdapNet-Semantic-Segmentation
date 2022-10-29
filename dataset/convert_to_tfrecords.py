@@ -64,4 +64,6 @@ def convert(f, record_name, mean_flag):
         features = {'height':_int64_feature(height),
                     'width':_int64_feature(width),
                     'modality1':_bytes_feature(modality1),
- 
+                    'label':_bytes_feature(label),
+                   }
+        example = tf.train.Example(features=tf.train.Featu

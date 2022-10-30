@@ -66,4 +66,8 @@ def convert(f, record_name, mean_flag):
                     'modality1':_bytes_feature(modality1),
                     'label':_bytes_feature(label),
                    }
-        example = tf.train.Example(features=tf.train.Featu
+        example = tf.train.Example(features=tf.train.Features(feature=features))
+        writer.write(example.SerializeToString())
+
+        if (count+1)%1 == 0:
+ 

@@ -70,4 +70,9 @@ def convert(f, record_name, mean_flag):
         writer.write(example.SerializeToString())
 
         if (count+1)%1 == 0:
- 
+            print 'Processed data: {}'.format(count)
+
+        count = count+1
+
+    if mean_flag:
+  

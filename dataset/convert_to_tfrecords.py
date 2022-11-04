@@ -79,4 +79,8 @@ def convert(f, record_name, mean_flag):
         np.save(record_name.split('.')[0]+'.npy', mean)
 
 def main():
-    args = PARSER.parse_arg
+    args = PARSER.parse_args()
+    if args.file:
+        file_list = decode(args.file)
+    else:
+        print '--file file_address

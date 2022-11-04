@@ -75,4 +75,8 @@ def convert(f, record_name, mean_flag):
         count = count+1
 
     if mean_flag:
-  
+        mean = mean/count
+        np.save(record_name.split('.')[0]+'.npy', mean)
+
+def main():
+    args = PARSER.parse_arg

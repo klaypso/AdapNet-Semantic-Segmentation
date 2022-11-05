@@ -83,4 +83,9 @@ def main():
     if args.file:
         file_list = decode(args.file)
     else:
-        print '--file file_address
+        print '--file file_address missing'
+        return
+    if args.record:
+        record_name = args.record
+    else:
+        print '--record tfrecord nam

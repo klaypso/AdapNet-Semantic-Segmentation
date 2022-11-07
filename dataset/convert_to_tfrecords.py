@@ -93,4 +93,7 @@ def main():
     mean_flag = False
     if args.record:
         mean_flag = args.mean
-    convert(file_list, rec
+    convert(file_list, record_name, mean_flag)
+
+if __name__ == '__main__':
+    main()

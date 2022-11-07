@@ -88,4 +88,9 @@ def main():
     if args.record:
         record_name = args.record
     else:
-        print '--record tfrecord nam
+        print '--record tfrecord name missing'
+        return
+    mean_flag = False
+    if args.record:
+        mean_flag = args.mean
+    convert(file_list, rec

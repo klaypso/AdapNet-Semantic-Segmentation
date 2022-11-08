@@ -1,2 +1,4 @@
 ''' AdapNet:  Adaptive  Semantic  Segmentation
-              in 
+              in  Adverse  Environmental  Conditions
+
+ Copyright (C) 2018  Abhinav Valada, Johan Vertens , Ankit Dhall and Wolfram Bur

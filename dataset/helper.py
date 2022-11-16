@@ -19,4 +19,7 @@
 import numpy as np
 import tensorflow as tf
 
-def get_trai
+def get_train_batch(config):
+    filenames = [config['train_data']]
+    dataset = tf.data.TFRecordDataset(filenames)
+    dataset = dataset.map(la

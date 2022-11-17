@@ -22,4 +22,6 @@ import tensorflow as tf
 def get_train_batch(config):
     filenames = [config['train_data']]
     dataset = tf.data.TFRecordDataset(filenames)
-    dataset = dataset.map(la
+    dataset = dataset.map(lambda x: parser(x, config['num_classes']))
+    dataset = dataset.shuffle(buffer_size=100)
+    dataset = dataset

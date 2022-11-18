@@ -24,4 +24,7 @@ def get_train_batch(config):
     dataset = tf.data.TFRecordDataset(filenames)
     dataset = dataset.map(lambda x: parser(x, config['num_classes']))
     dataset = dataset.shuffle(buffer_size=100)
-    dataset = dataset
+    dataset = dataset.batch(config['batch_size'])
+    dataset = dataset.repeat(100)
+    dataset = dataset.prefetch(1)
+    iterator = dataset.make_one

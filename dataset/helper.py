@@ -36,4 +36,8 @@ def get_train_data(config):
     return [dataA, label], iterator
 
 def get_test_data(config):
-    iterator = get_t
+    iterator = get_test_batch(config)
+    dataA, label = iterator.get_next()
+    return [dataA, label], iterator
+
+def get_test_batch(config):

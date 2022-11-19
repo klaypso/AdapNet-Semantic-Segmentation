@@ -27,4 +27,8 @@ def get_train_batch(config):
     dataset = dataset.batch(config['batch_size'])
     dataset = dataset.repeat(100)
     dataset = dataset.prefetch(1)
-    iterator = dataset.make_one
+    iterator = dataset.make_one_shot_iterator()
+    return iterator
+
+def get_train_data(config):
+    iterator = get_train_batch(config

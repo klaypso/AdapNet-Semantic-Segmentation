@@ -43,4 +43,6 @@ def get_test_data(config):
 def get_test_batch(config):
     filenames = [config['test_data']]
     dataset = tf.data.TFRecordDataset(filenames)
-    dataset = dataset.map(lambda x:
+    dataset = dataset.map(lambda x: parser(x, config['num_classes']))
+    dataset = dataset.batch(config['batch_size'])
+    iterator = dataset.make_init

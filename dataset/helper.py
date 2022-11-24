@@ -45,4 +45,8 @@ def get_test_batch(config):
     dataset = tf.data.TFRecordDataset(filenames)
     dataset = dataset.map(lambda x: parser(x, config['num_classes']))
     dataset = dataset.batch(config['batch_size'])
-    iterator = dataset.make_init
+    iterator = dataset.make_initializable_iterator()
+    return iterator
+
+def compute_output_matrix(label_max, pred_max, output_matrix):
+    for i in

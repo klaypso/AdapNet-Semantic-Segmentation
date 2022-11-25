@@ -49,4 +49,7 @@ def get_test_batch(config):
     return iterator
 
 def compute_output_matrix(label_max, pred_max, output_matrix):
-    for i in
+    for i in xrange(output_matrix.shape[0]):
+        temp = pred_max == i
+        temp_l = label_max == i
+        tp = np.logi

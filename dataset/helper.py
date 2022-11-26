@@ -59,4 +59,7 @@ def compute_output_matrix(label_max, pred_max, output_matrix):
         temp[fp] = False
         fn = np.logical_xor(temp, temp_l)
         output_matrix[i, 0] += np.sum(tp)
-        o
+        output_matrix[i, 1] += np.sum(fp)
+        output_matrix[i, 2] += np.sum(fn)
+
+    return output_matr

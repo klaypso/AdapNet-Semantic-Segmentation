@@ -52,4 +52,7 @@ def compute_output_matrix(label_max, pred_max, output_matrix):
     for i in xrange(output_matrix.shape[0]):
         temp = pred_max == i
         temp_l = label_max == i
-        tp = np.logi
+        tp = np.logical_and(temp, temp_l)
+        temp[temp_l] = True
+        fp = np.logical_xor(temp, temp_l)
+        temp = pred_m

@@ -69,4 +69,6 @@ def compute_iou(output_matrix):
 
 def parser(proto_data, num_classes):
 
-    features = {'height':tf.FixedLenFeature((), tf.int64, def
+    features = {'height':tf.FixedLenFeature((), tf.int64, default_value=0),
+                'width':tf.FixedLenFeature((), tf.int64, default_value=0),
+                'modality1':t

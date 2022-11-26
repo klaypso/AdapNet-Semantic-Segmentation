@@ -65,4 +65,8 @@ def compute_output_matrix(label_max, pred_max, output_matrix):
     return output_matrix
 
 def compute_iou(output_matrix):
-    return np.sum(output_matrix[1:, 0]/(np.sum(output_matrix[1:, :], 1).astype(np.float32)+1e-10))/(output
+    return np.sum(output_matrix[1:, 0]/(np.sum(output_matrix[1:, :], 1).astype(np.float32)+1e-10))/(output_matrix.shape[0]-1)*100
+
+def parser(proto_data, num_classes):
+
+    features = {'height':tf.FixedLenFeature((), tf.int64, def

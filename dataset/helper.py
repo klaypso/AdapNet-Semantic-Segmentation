@@ -72,4 +72,7 @@ def parser(proto_data, num_classes):
     features = {'height':tf.FixedLenFeature((), tf.int64, default_value=0),
                 'width':tf.FixedLenFeature((), tf.int64, default_value=0),
                 'modality1':tf.FixedLenFeature((), tf.string, default_value=""),
-                'label':tf.FixedLenFeature((), tf.string, d
+                'label':tf.FixedLenFeature((), tf.string, default_value="")
+               }
+    parsed_features = tf.parse_single_example(proto_data, features)
+    mod

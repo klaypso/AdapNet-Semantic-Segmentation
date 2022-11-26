@@ -75,4 +75,5 @@ def parser(proto_data, num_classes):
                 'label':tf.FixedLenFeature((), tf.string, default_value="")
                }
     parsed_features = tf.parse_single_example(proto_data, features)
-    mod
+    modality1 = tf.decode_raw(parsed_features['modality1'], tf.uint8)
+    label = tf.decode_raw(parsed_features['label']

@@ -85,4 +85,4 @@ def parser(proto_data, num_classes):
     label = tf.squeeze(label, axis=2)
     modality1 = tf.reshape(modality1, [height, width, 3])
 
-    return tf.cast(modality1, tf.float32), tf.c
+    return tf.cast(modality1, tf.float32), tf.cast(label, tf.int32)

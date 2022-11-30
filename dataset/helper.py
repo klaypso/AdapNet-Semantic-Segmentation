@@ -79,4 +79,7 @@ def parser(proto_data, num_classes):
     label = tf.decode_raw(parsed_features['label'], tf.uint8)
 
     height = tf.cast(parsed_features['height'], tf.int32)
-    width = tf.cast(parsed_features['widt
+    width = tf.cast(parsed_features['width'], tf.int32)
+    label = tf.reshape(label, [height, width, 1])
+    label = tf.one_hot(label, num_classes)
+    labe

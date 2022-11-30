@@ -82,4 +82,7 @@ def parser(proto_data, num_classes):
     width = tf.cast(parsed_features['width'], tf.int32)
     label = tf.reshape(label, [height, width, 1])
     label = tf.one_hot(label, num_classes)
-    labe
+    label = tf.squeeze(label, axis=2)
+    modality1 = tf.reshape(modality1, [height, width, 3])
+
+    return tf.cast(modality1, tf.float32), tf.c

@@ -76,4 +76,7 @@ def parser(proto_data, num_classes):
                }
     parsed_features = tf.parse_single_example(proto_data, features)
     modality1 = tf.decode_raw(parsed_features['modality1'], tf.uint8)
-    label = tf.decode_raw(parsed_features['label']
+    label = tf.decode_raw(parsed_features['label'], tf.uint8)
+
+    height = tf.cast(parsed_features['height'], tf.int32)
+    width = tf.cast(parsed_features['widt

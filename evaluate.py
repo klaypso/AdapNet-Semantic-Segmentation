@@ -37,4 +37,8 @@ def test_func(config):
 
     with tf.variable_scope(resnet_name):
         model = model_func(num_classes=config['num_classes'], training=False)
-        images_pl = tf.placeholder(tf.float32, [None, config['heig
+        images_pl = tf.placeholder(tf.float32, [None, config['height'], config['width'], 3])
+        model.build_graph(images_pl)
+
+    config1 = tf.ConfigProto()
+    config1.gpu_opti

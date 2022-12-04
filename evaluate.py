@@ -41,4 +41,6 @@ def test_func(config):
         model.build_graph(images_pl)
 
     config1 = tf.ConfigProto()
-    config1.gpu_opti
+    config1.gpu_options.allow_growth = True
+    sess = tf.Session(config=config1)
+    sess.run(tf.global_variables_initializer

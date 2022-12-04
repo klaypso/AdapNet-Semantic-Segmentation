@@ -30,4 +30,6 @@ PARSER.add_argument('-c', '--config', default='config/cityscapes_test.config')
 
 def test_func(config):
     os.environ['CUDA_VISIBLE_DEVICES'] = config['gpu_id']
-    mod
+    module = importlib.import_module('models.' + config['model'])
+    model_func = getattr(module, config['model'])
+    data_list, iterat

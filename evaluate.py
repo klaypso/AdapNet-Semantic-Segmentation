@@ -32,4 +32,8 @@ def test_func(config):
     os.environ['CUDA_VISIBLE_DEVICES'] = config['gpu_id']
     module = importlib.import_module('models.' + config['model'])
     model_func = getattr(module, config['model'])
-    data_list, iterat
+    data_list, iterator = get_test_data(config)
+    resnet_name = 'resnet_v1_50'
+
+    with tf.variable_scope(resnet_name):
+        model = model_fu

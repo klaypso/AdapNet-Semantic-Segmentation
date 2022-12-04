@@ -36,4 +36,5 @@ def test_func(config):
     resnet_name = 'resnet_v1_50'
 
     with tf.variable_scope(resnet_name):
-        model = model_fu
+        model = model_func(num_classes=config['num_classes'], training=False)
+        images_pl = tf.placeholder(tf.float32, [None, config['heig

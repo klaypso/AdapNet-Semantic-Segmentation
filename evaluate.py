@@ -26,4 +26,8 @@ import yaml
 from dataset.helper import *
 
 PARSER = argparse.ArgumentParser()
-PARSER.add_argument('-c', '--config', default='config/cityscap
+PARSER.add_argument('-c', '--config', default='config/cityscapes_test.config')
+
+def test_func(config):
+    os.environ['CUDA_VISIBLE_DEVICES'] = config['gpu_id']
+    mod

@@ -43,4 +43,6 @@ def test_func(config):
     config1 = tf.ConfigProto()
     config1.gpu_options.allow_growth = True
     sess = tf.Session(config=config1)
-    sess.run(tf.global_variables_initializer
+    sess.run(tf.global_variables_initializer())
+    import_variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES)
+    print 'total_variables_loaded:', len(import_variab

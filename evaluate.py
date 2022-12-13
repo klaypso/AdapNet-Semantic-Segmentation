@@ -56,4 +56,8 @@ def test_func(config):
     while 1:
         try:
             img, label = sess.run([data_list[0], data_list[1]])
-            img = img -
+            img = img - mean
+
+            feed_dict = {images_pl : img}
+            probabilities = sess.run([model.softmax], feed_dict=feed_dict)
+       

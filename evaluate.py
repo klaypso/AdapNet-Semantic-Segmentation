@@ -48,4 +48,8 @@ def test_func(config):
     print 'total_variables_loaded:', len(import_variables)
     mean = np.load(config['mean'])
     saver = tf.train.Saver(import_variables)
-    saver.restore(sess, config['checkpoint
+    saver.restore(sess, config['checkpoint'])
+    sess.run(iterator.initializer)
+    step = 0
+    total_num = 0
+    output_matrix = np.zeros([config['num_classes']

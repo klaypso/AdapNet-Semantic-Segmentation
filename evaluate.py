@@ -52,4 +52,8 @@ def test_func(config):
     sess.run(iterator.initializer)
     step = 0
     total_num = 0
-    output_matrix = np.zeros([config['num_classes']
+    output_matrix = np.zeros([config['num_classes'], 3])
+    while 1:
+        try:
+            img, label = sess.run([data_list[0], data_list[1]])
+            img = img -

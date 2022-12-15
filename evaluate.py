@@ -68,4 +68,9 @@ def test_func(config):
             if (step+1) % config['skip_step'] == 0:
                 print '%s %s] %d. iou updating' \
                   % (str(datetime.datetime.now()), str(os.getpid()), total_num)
-                print 'mIoU: ', compute_iou(out
+                print 'mIoU: ', compute_iou(output_matrix)
+
+            step += 1
+
+        except tf.errors.OutOfRangeError:
+            print 'mIoU: ', 

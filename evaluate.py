@@ -62,4 +62,7 @@ def test_func(config):
             probabilities = sess.run([model.softmax], feed_dict=feed_dict)
             prediction = np.argmax(probabilities[0], 3)
             gt = np.argmax(label, 3)
-            prediction[gt == 
+            prediction[gt == 0] = 0
+            output_matrix = compute_output_matrix(gt, prediction, output_matrix)
+            total_num += label.shape[0]
+ 

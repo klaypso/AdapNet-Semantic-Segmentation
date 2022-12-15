@@ -65,4 +65,6 @@ def test_func(config):
             prediction[gt == 0] = 0
             output_matrix = compute_output_matrix(gt, prediction, output_matrix)
             total_num += label.shape[0]
- 
+            if (step+1) % config['skip_step'] == 0:
+                print '%s %s] %d. iou updating' \
+             

@@ -67,4 +67,5 @@ def test_func(config):
             total_num += label.shape[0]
             if (step+1) % config['skip_step'] == 0:
                 print '%s %s] %d. iou updating' \
-             
+                  % (str(datetime.datetime.now()), str(os.getpid()), total_num)
+                print 'mIoU: ', compute_iou(out

@@ -81,3 +81,8 @@ def main():
     if args.config:
         file_address = open(args.config)
         config = yaml.load(file_address)
+    else:
+        print '--config config_file_address missing'
+    test_func(config)
+
+if __name__ == '__ma

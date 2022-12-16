@@ -73,4 +73,8 @@ def test_func(config):
             step += 1
 
         except tf.errors.OutOfRangeError:
-            print 'mIoU: ', 
+            print 'mIoU: ', compute_iou(output_matrix), 'total_data: ', total_num
+            break
+
+def main():
+    args = PARSER.

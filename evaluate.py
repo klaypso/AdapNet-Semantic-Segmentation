@@ -77,4 +77,7 @@ def test_func(config):
             break
 
 def main():
-    args = PARSER.
+    args = PARSER.parse_args()
+    if args.config:
+        file_address = open(args.config)
+        config = yaml.load(file_address)

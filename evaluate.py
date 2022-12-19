@@ -85,4 +85,5 @@ def main():
         print '--config config_file_address missing'
     test_func(config)
 
-if __name__ == '__ma
+if __name__ == '__main__':
+    main()

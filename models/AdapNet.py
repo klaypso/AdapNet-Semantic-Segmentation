@@ -95,3 +95,32 @@ class AdapNet(network_base.Network):
         with tf.variable_scope('conv5'):
             self.deconv_up3 = self.tconv2d(self.up1, 16, self.num_classes, 8)
             self.deconv_up3 = self.batch_norm(self.deconv_up3)
+
+        self.softmax = tf.nn.softmax(self.deconv_up3)
+
+    def _create_loss(self, label):
+        self.loss = tf.reduce_mean(-tf.reduce_sum(tf.multiply(label*tf.log(self.softmax+1e-10),
+                                                              self.weights), axis=[3]))
+
+    def create_optimizer(self):
+        self.lr = tf.train.polynomial_decay(self.learning_rate, self.global_step,
+                                            self.decay_steps, power=self.power)
+        self.train_op = tf.train.AdamOptimizer(self.lr).minimize(self.loss, global_step=self.global_step)
+
+    def _create_summaries(self):
+        with tf.name_scope("summaries"):
+            tf.summary.scalar("loss", self.loss)
+            tf.summary.histogram("histogram_loss", self.loss)
+            self.summary_op = tf.summary.merge_all()
+
+    def build_graph(self, data, label=None):
+        self._setup(data)
+
+        if self.training:
+            self._create_loss(label)
+
+def main():
+    print 'Do Nothing'
+
+if __name__ == '__main__':
+    main()

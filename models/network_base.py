@@ -242,3 +242,21 @@ class Network(object):
         with tf.variable_scope(name_W):
             kernel = tf.get_variable('', weight_shape,
                                      initializer=initializer,
+                                     trainable=self.training,
+                                     dtype=self.float_type, 
+                                     regularizer=tf.contrib.layers.l2_regularizer(scale=self.weight_decay)
+                                    )
+            x = tf.matmul(inputs, kernel)
+
+        with tf.variable_scope(name): 
+            b = tf.get_variable('biases', [out_channels], trainable=self.training,
+                                initializer=tf.constant_initializer(0.01), dtype=self.float_type)
+
+        return tf.nn.bias_add(x, b, data_format='NHWC')
+
+    def conv_bias(self, inputs, kernel_size, stride, out_channels, name):
+        with tf.variable_scope(name):
+            x = self.conv2d(inputs, kernel_size, stride, out_channels)
+            b = tf.get_variable('biases', [out_channels], trainable=self.training,
+                                initializer=tf.constant_initializer(0.01), dtype=self.float_type)
+        return tf.nn.bias_add(x, b, data_format='NHWC')

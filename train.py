@@ -84,3 +84,53 @@ def train_func(config):
         try:
             img, label = sess.run([data_list[0], data_list[1]])
             img = img-mean
+
+            feed_dict = {images_pl: img, labels_pl: label}
+            loss_batch, _ = sess.run([model.loss, model.train_op],
+                                     feed_dict=feed_dict)
+
+            total_loss += loss_batch
+
+            if (step + 1) % config['save_step'] == 0:
+                saver.save(sess, os.path.join(config['checkpoint'], 'model.ckpt'), step)
+
+            if (step + 1) % config['skip_step'] == 0:
+                left_hours = 0
+
+                if t0 is not None:
+                    delta_t = (datetime.datetime.now() - t0).seconds
+                    left_time = (config['max_iteration'] - step) / config['skip_step'] * delta_t
+                    left_hours = left_time/3600.0
+
+                t0 = datetime.datetime.now()
+                total_loss /= config['skip_step']
+                print '%s %s] Step %s, lr = %f ' \
+                  % (str(datetime.datetime.now()), str(os.getpid()), step,
+                     model.lr.eval(session=sess))
+                print '\t loss = %.4f' % (total_loss)
+                print '\t estimated time left: %.1f hours. %d/%d' % (left_hours, step,
+                                                                     config['max_iteration'])
+                print '\t', config['model']
+                total_loss = 0.0
+
+            step += 1
+            if step > config['max_iteration']:
+                saver.save(sess, os.path.join(config['checkpoint'], 'model.ckpt'), step-1)
+                print 'training_completed'
+                break
+
+        except tf.errors.OutOfRangeError:
+            print 'Epochs in dataset repeat < max_iteration'
+            break
+
+def main():
+    args = PARSER.parse_args()
+    if args.config:
+        file_address = open(args.config)
+        config = yaml.load(file_address)
+    else:
+        print '--config config_file_address missing'
+    train_func(config)
+
+if __name__ == '__main__':
+    main()

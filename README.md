@@ -1,2 +1,2 @@
 # AdapNet:  Adaptive  Semantic  Segmentation in  Adverse  Environmental  Conditions
-AdapNet is a deep learning model used for semantic image segmentation, aiming to assign semantic labels (suc
+AdapNet is a deep learning model used for semantic image segmentation, aiming to assign semantic labels (such as car, road, tree, etc.) to every pixel in the input image. It's easily trainable on a single GPU with 12 GB of 

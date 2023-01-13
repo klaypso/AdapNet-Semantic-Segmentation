@@ -5,4 +5,7 @@ This repository facilitates the TensorFlow implementation of AdapNet, enabling y
 
 It can be further integrated with the [CMoDE](https://github.com/DeepSceneSeg/CMoDE) fusion scheme for multimodal semantic segmentation.
 
-If you find this useful 
+If you find this useful for your research, please consider citing our paper:
+```
+@inproceedings{valada2017icra,
+  title = {AdapNet: Adaptive Semantic Segmen

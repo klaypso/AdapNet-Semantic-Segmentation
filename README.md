@@ -8,4 +8,5 @@ It can be further integrated with the [CMoDE](https://github.com/DeepSceneSeg/CM
 If you find this useful for your research, please consider citing our paper:
 ```
 @inproceedings{valada2017icra,
-  title = {AdapNet: Adaptive Semantic Segmen
+  title = {AdapNet: Adaptive Semantic Segmentation in Adverse Environmental Conditions},
+  booktitle = {Proceedings of the IEEE International Con

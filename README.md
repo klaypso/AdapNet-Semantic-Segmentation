@@ -21,4 +21,12 @@ http://deepscene.cs.uni-freiburg.de
 
 For any inquiries, please check the Contacts section in this repository.
 
-## Syste
+## System Requirements
+
+Programming Language
+Python 2.7
+
+Python Packages
+tensorflow-gpu 1.4.0
+
+Check out the Configure the Network section for further details

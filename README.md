@@ -9,4 +9,11 @@ If you find this useful for your research, please consider citing our paper:
 ```
 @inproceedings{valada2017icra,
   title = {AdapNet: Adaptive Semantic Segmentation in Adverse Environmental Conditions},
-  booktitle = {Proceedings of the IEEE International Con
+  booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={4644--4651},
+  year = {2017},
+  organization={IEEE}
+}
+```
+
+## Li

@@ -29,4 +29,7 @@ Python 2.7
 Python Packages
 tensorflow-gpu 1.4.0
 
-Check out the Configure the Network section for further details
+Check out the Configure the Network section for further details on setting up the project.
+
+## Training and Evaluation
+Training and evaluation procedures can be found in the r

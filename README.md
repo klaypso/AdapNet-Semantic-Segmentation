@@ -32,4 +32,6 @@ tensorflow-gpu 1.4.0
 Check out the Configure the Network section for further details on setting up the project.
 
 ## Training and Evaluation
-Training and evaluation procedures can be found in the r
+Training and evaluation procedures can be found in the respective sections. Additional notes regarding performance improvement of the model have been provided.
+
+## Lice

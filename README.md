@@ -34,4 +34,5 @@ Check out the Configure the Network section for further details on setting up th
 ## Training and Evaluation
 Training and evaluation procedures can be found in the respective sections. Additional notes regarding performance improvement of the model have been provided.
 
-## Lice
+## License
+For academic usage, this code is released under the GPLv3 license. For any commercial purpose, please contact the owner.
